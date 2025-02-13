@@ -1,3 +1,4 @@
 @import 'variables.css';
 @import 'base.css';
 @import 'components.css';
+@import 'utilities.css'; /* Added utilities.css */
