@@ -7,11 +7,19 @@
   body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    background-image: url(../assets/images/133219164_408268213746535_3189721816828527612_n.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--secondary-color);
     line-height: 1.6;
-    color: var(--color-text);
-    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 

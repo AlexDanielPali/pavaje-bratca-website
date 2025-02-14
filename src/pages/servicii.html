@@ -135,7 +135,7 @@
                     <address class="footer__address">
                         <p>Bratca, nr. 212, jud. Bihor</p>
                         <p>Tel: <a href="tel:0753425298">0753 425 298</a></p>
-                        <p>Email: <a href="mailto:contact@pavajebratca.ro">contact@pavajebratca.ro</a></p>
+                        <p>Email: <a href="mailto:pavajebratca@gmail.com">pavajebratca@gmail.com</a></p>
                     </address>
                 </div>
 
@@ -146,36 +146,54 @@
                             <a href="https://www.facebook.com/pavaje.bratca" class="social-link" target="_blank" rel="noopener">
                                 <i class="fab fa-facebook-f"></i>
                                 <span class="sr-only">Facebook</span>
+                                Pavaje Bratca
                             </a>
                             <a href="https://www.instagram.com/pavajebratca/" class="social-link" target="_blank" rel="noopener">
                                 <i class="fab fa-instagram"></i>
                                 <span class="sr-only">Instagram</span>
+                                pavajebratca
                             </a>
                             <a href="https://www.tiktok.com/@pavajebratca" class="social-link" target="_blank" rel="noopener">
                                 <i class="fab fa-tiktok"></i>
                                 <span class="sr-only">TikTok</span>
+                                pavajebratca
                             </a>
                         </ul>
                     </div>
                 </div>
 
-                <div class="footer__map">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2722.7600571671255!2d22.61243727641333!3d46.966404171138336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47488519bde6a8c7%3A0xc63d37ffcf1e76a4!2sTapiterie%20Bratca%20Borod!5e0!3m2!1sro!2sro!4v1733992168180!5m2!1sro!2sro"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Locația noastră pe hartă"
-                    ></iframe>
-                </div>
+                
             </div>
 
             <div class="footer__bottom">
-                <p>&copy; 2024 Pavaje Bratca. Toate drepturile rezervate.</p>
+                <p>&copy; 2025 Pavaje Bratca. Toate drepturile rezervate.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="../js/main.js" type="module"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.querySelector(".nav__toggle");
+            const menu = document.querySelector(".nav__menu");
+        
+            toggleButton.addEventListener("click", function () {
+                const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+                toggleButton.setAttribute("aria-expanded", !isExpanded);
+                menu.classList.toggle("nav__menu--active");
+                toggleButton.classList.toggle("nav__toggle--active");
+            });
+        
+            // Închide meniul la click pe un link
+            document.querySelectorAll(".nav__link").forEach(link => {
+                link.addEventListener("click", function () {
+                    menu.classList.remove("nav__menu--active");
+                    toggleButton.setAttribute("aria-expanded", "false");
+                    toggleButton.classList.remove("nav__toggle--active");
+                });
+            });
+        });
+        </script>
 </body>
 </html>
