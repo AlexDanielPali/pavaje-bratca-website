@@ -1,25 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pavaje Bratca - Servicii profesionale de pavaje și amenajări curți în Bratca, Bihor">
-    <title>Pavaje Bratca | Acasă</title>
+    <meta name="description" content="Află povestea și experiența Pavaje Bratca în domeniul pavajelor și amenajărilor exterioare">
+    <title>Despre Noi | Pavaje Bratca</title>
     
-    <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./main.css">
 </head>
-<body class="home-page">
+<body class="about-page">
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <a href="./index.html" class="nav__logo">
-                    <img src="../assets/images/logo.png" alt="Pavaje Bratca Logo" width="150" height="50">
+                    <img src="./logo.png" alt="Pavaje Bratca Logo" width="150" height="50">
                 </a>
                 
                 <button class="nav__toggle" aria-label="Meniu" aria-expanded="false">
@@ -27,10 +25,10 @@
                 </button>
             
                 <ul class="nav__menu">
-                    <li><a href="./index.html" class="nav__link nav__link--active">Acasă</a></li>
+                    <li><a href="./index.html" class="nav__link ">Acasă</a></li>
                     <li><a href="./servicii.html" class="nav__link">Servicii</a></li>
                     <li><a href="./galerie.html" class="nav__link">Galerie</a></li>
-                    <li><a href="./despre-noi.html" class="nav__link">Despre noi</a></li>
+                    <li><a href="./despre-noi.html" class="nav__link nav__link--active">Despre noi</a></li>
                     <li><a href="./contact.html" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
@@ -38,35 +36,50 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <section class="about">
             <div class="container">
-                <div class="hero__content">
-                    <h1 class="hero__title">Munca de calitate se face în echipă!</h1>
-                    <p class="hero__text">
-                        În ziua de azi știm cu toții cât este de important să ai o echipă de încredere care la rândul lor să aibă realizări spectaculoase în domeniul în care noi lucrăm.
-                    </p>
-                    <p class="hero__text">
-                        In firma noastra gasim relatia sef si muncitori care lucreaza cot la cot impreuna oferind cele mai frumoase lucrari. 
-                    </p>
+                <h1 class="about__title">Despre Pavaje Bratca</h1>
+                <p class="about__subtitle">O poveste despre calitate și profesionalism în amenajări exterioare</p>
 
-                    
-                    <div class="services-preview">
-                        <h2 class="services-preview__title">Serviciile noastre includ:</h2>
-                        <ul class="services-list">
-                            <li class="services-list__item">Montare de pavaj</li>
-                            <li class="services-list__item">Amenajări curți cu pavaj</li>
-                            <li class="services-list__item">Montare garduri rustice</li>
-                            <li class="services-list__item">Montare garduri din bolțari de beton</li>
-                            <li class="services-list__item">Ziduri de sprijin din bolțari de beton</li>
+                <div class="about__content">
+                    <div class="about__text">
+                        <h2 class="about__heading">Experiență și Dezvoltare</h2>
+                        <div class="about__description">
+                            <p>Cu o experiență de peste 10 ani în domeniul pavajelor și amenajărilor exterioare, ne-am dezvoltat constant pentru a oferi cele mai bune servicii clienților noștri.</p>
+                            <p>Am început ca o mică afacere locală și am crescut treptat, învățând din fiecare proiect și adaptându-ne la cerințele în continuă schimbare ale pieței.</p>
+                        </div>
+
+                        <h2 class="about__heading">Serviciile Noastre Principale</h2>
+                        <ul class="about__services-list">
+                            <li>Montare pavaje de înaltă calitate</li>
+                            <li>Amenajări complete pentru curți și grădini</li>
+                            <li>Construcție garduri rustice și moderne</li>
+                            <li>Ziduri de sprijin și amenajări terenuri</li>
                         </ul>
-                        <a href="./servicii.html" class="button button--primary">Vezi toate serviciile</a>
+
+                        <h2 class="about__heading">Valorile Noastre</h2>
+                        <div class="about__values">
+                            <div class="about__value-card">
+                                <i class="fas fa-medal about__value-icon"></i>
+                                <h3>Calitate</h3>
+                                <p>Folosim doar materiale premium și tehnici verificate</p>
+                            </div>
+                            <div class="about__value-card">
+                                <i class="fas fa-handshake about__value-icon"></i>
+                                <h3>Încredere</h3>
+                                <p>Construim relații pe termen lung cu clienții noștri</p>
+                            </div>
+                            <div class="about__value-card">
+                                <i class="fas fa-clock about__value-icon"></i>
+                                <h3>Punctualitate</h3>
+                                <p>Respectăm termenele și programul stabilit</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -110,8 +123,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Scripts -->
     <script type="module" src="../js/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
