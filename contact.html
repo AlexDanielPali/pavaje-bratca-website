@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactează Pavaje Bratca pentru servicii profesionale de pavaje și amenajări">
-    <title>Contact | Pavaje Bratca</title>
+    <meta name="description" content="Pavaje Bratca - Servicii profesionale de pavaje și amenajări curți în Bratca, Bihor">
+    <title>Pavaje Bratca | Acasă</title>
     
+    <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="src/css/main.css">
 </head>
-<body class="contact-page">
+<body class="home-page">
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <a href="./index.html" class="nav__logo">
-                    <img src="./logo.png" alt="Pavaje Bratca Logo" width="150" height="50">
+                    <img src="src/assets/images/logo.png" alt="Pavaje Bratca Logo" width="150" height="50">
                 </a>
                 
                 <button class="nav__toggle" aria-label="Meniu" aria-expanded="false">
@@ -25,11 +26,11 @@
                 </button>
             
                 <ul class="nav__menu">
-                    <li><a href="./index.html" class="nav__link ">Acasă</a></li>
+                    <li><a href="./index.html" class="nav__link nav__link--active">Acasă</a></li>
                     <li><a href="./servicii.html" class="nav__link">Servicii</a></li>
                     <li><a href="./galerie.html" class="nav__link">Galerie</a></li>
                     <li><a href="./despre-noi.html" class="nav__link">Despre noi</a></li>
-                    <li><a href="./contact.html" class="nav__link nav__link--active">Contact</a></li>
+                    <li><a href="./contact.html" class="nav__link">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -140,7 +141,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../js/main.js" type="module"></script>
+    <script type="module" src="src/js/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggleButton = document.querySelector(".nav__toggle");
