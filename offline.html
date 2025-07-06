@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pavaje Bratca - Servicii profesionale de pavaje și amenajări curți în Bratca, Bihor">
+    <title>Offline | Pavaje Bratca</title>
+    <style>
+        :root {
+            --color-primary: #4a90e2;
+            --color-secondary: #2c3e50;
+            --color-text: #333333;
+            --color-background: #ffffff;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+        }
+        
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif, Arial, Helvetica;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .offline-page {
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .offline-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-secondary);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-secondary);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            margin-top: var(--spacing-md);
+        }
+        
+        .button:hover {
+            background-color: #3a80d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-page">
+        <div class="container">
+            <div class="offline-content">
+                <div class="offline-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+                        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+                        <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+                        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                    </svg>
+                </div>
+                <h1>Sunteți offline</h1>
+                <p>Se pare că nu aveți o conexiune la internet. Pentru a vizualiza site-ul Pavaje Bratca, vă rugăm să vă conectați la internet.</p>
+                <p>Unele pagini și funcționalități ar putea fi disponibile offline dacă le-ați accesat anterior.</p>
+                <a href="/" class="button">Încercați din nou</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

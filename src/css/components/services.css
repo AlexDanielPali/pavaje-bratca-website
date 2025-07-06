@@ -1,0 +1,113 @@
+/**
+ * Services Component
+ * Stiluri pentru secțiunea de servicii
+ */
+
+/* Container pentru servicii */
+.services {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-light-gray);
+}
+
+.services__title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  position: relative;
+}
+
+.services__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Card pentru servicii */
+.service-card {
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card__content {
+  padding: var(--spacing-lg);
+}
+
+.service-card__title {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.service-card__description {
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-card__features {
+  list-style: none;
+  margin-bottom: var(--spacing-md);
+}
+
+.service-card__feature {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.service-card__feature::before {
+  content: "✓";
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+}
+
+.service-card__cta {
+  margin-top: var(--spacing-md);
+}
+
+/* Media queries pentru responsivitate */
+@media (max-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    max-width: 100%;
+  }
+}

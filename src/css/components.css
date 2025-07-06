@@ -1,13 +1,18 @@
+/**
+ * Components CSS
+ * Stil pentru anumite componente comune
+ * Majoritatea componentelor sunt acum în fișiere individuale în directorul /components
+ */
+
+/* Header component */
 .header {
-    position: sticky;
-    top: 0;
-    background: var(--color-background);
-    box-shadow: var(--shadow-sm);
-    z-index: 1000;
-    height: var(--header-height);
-    background-color: var(--color-primary);
-    padding: var(--spacing-md);
-  }
+  position: sticky;
+  top: 0;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+  width: 100%;
+}
   
   .nav {
     position: relative;

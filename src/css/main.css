@@ -1,4 +1,55 @@
+/**
+ * Main CSS
+ * Fișierul principal CSS care încarcă toate componentele și utilitățile
+ * CSS-ul critic este încărcat inline în <head> pentru performanță optimă
+ */
+
+/* Importuri de bază - variabile și stiluri de bază (pentru cazul în care nu sunt încărcate inline) */
 @import 'variables.css';
 @import 'base.css';
 @import 'components.css';
-@import 'utilities.css'; /* Added utilities.css */
+
+/* Componente - încărcate condiționat pe fiecare pagină pentru performanță optimă */
+/* Fiecare componentă este modulară și independentă */
+@import 'components/hero.css';      /* Componentă pentru secțiunea de hero */
+@import 'components/services.css';  /* Componentă pentru secțiunea de servicii */
+@import 'components/gallery.css';   /* Componentă pentru galeria de imagini */
+@import 'components/about.css';     /* Componentă pentru pagina Despre noi */
+@import 'components/contact.css';   /* Componentă pentru pagina de Contact */
+@import 'components/footer.css';    /* Componentă pentru footer */
+@import 'components/back-to-top.css';  /* Componentă pentru butonul back-to-top */
+@import 'components/enhanced-lightbox.css';  /* Componentă pentru lightbox îmbunătățit */
+@import 'components/social-share.css';  /* Componentă pentru partajare socială */
+
+/* Utilități - clase utilitare pentru spațiere, text, layout, etc. */
+@import 'utilities.css';
+
+/* Media Queries pentru Responsive Design - încărcate la final */
+@media print {
+  /* Stiluri pentru printare */
+  .nav, .footer, .hero {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+}
+
+/* Stiluri pentru user agent fără JavaScript */
+.no-js .nav__toggle {
+  display: none;
+}
+
+.no-js .nav__menu {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="src/css/main.css">
 </head>
-<body class="home-page">
+<body class="contact-page">
     <header class="header">
         <div class="container">
             <nav class="nav">
@@ -63,6 +63,15 @@
                             <p>Bratca, nr. 212, jud. Bihor</p>
                         </div>
 
+                        <!-- Program de lucru -->
+                        <div class="contact__card">
+                            <i class="fas fa-clock contact__icon"></i>
+                            <h3>Program de lucru</h3>
+                            <p>Luni - Vineri: 8:00 - 18:00</p>
+                            <p>Sâmbătă: 9:00 - 14:00</p>
+                            <p>Duminică: Închis</p>
+                        </div>
+                        
                         <!-- Social Media -->
                         <div class="contact__social">
                             <h3>Urmărește-ne</h3>
@@ -88,10 +97,43 @@
                         </div>
                     </div>
 
-                    
-
+                    <!-- Contact Form -->
+                    <div class="contact__form">
+                        <div class="form-wrapper">
+                            <h2 class="form-title">Trimite-ne un mesaj</h2>
+                            <p class="form-subtitle">Completează formularul și vom reveni cu un răspuns în cel mai scurt timp.</p>
+                            <form id="contact-form" class="contact-form" action="#" method="post">
+                                <div class="form-group required">
+                                    <label for="name">Nume</label>
+                                    <input type="text" id="name" name="name" placeholder="Numele tău" required>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Email-ul tău" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefon</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Numărul tău de telefon">
+                                </div>
+                                <div class="form-group required">
+                                    <label for="message">Mesaj</label>
+                                    <textarea id="message" name="message" placeholder="Cum te putem ajuta?" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Trimite mesajul</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 
-                
+                <!-- Map Section -->
+                <div class="contact-map-section">
+                    <h2 class="map-title">Ne găsești aici</h2>
+                    <div id="map" class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43424.48243204401!2d22.598321820226873!3d46.89665377583452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4748b5ad577ab4f7%3A0xa1cf1674f4b803c2!2sBratca%20417095!5e0!3m2!1sro!2sro!4v1657104772440!5m2!1sro!2sro" width="100%" height="100%" allowfullscreen="" title="Locația Pavaje Bratca pe hartă"></iframe>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

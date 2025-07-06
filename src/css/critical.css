@@ -1,0 +1,210 @@
+/* Critical CSS - încărcat înaintea conținutului pentru a preveni FOUC */
+:root {
+  /* Culori primare */
+  --color-primary: #4a90e2;
+  --color-primary-hover: #3a80d2;
+  --color-primary-rgb: 74, 144, 226;
+  --color-secondary: #2c3e50;
+  --color-text: #333333;
+  --color-background: #ffffff;
+  --color-gray: #666666;
+  --color-light-gray: #f5f5f5;
+  
+  /* Spațiere consistentă */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem; 
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* Umbre */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+  
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 80px;
+  
+  /* Tranziții */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset modern */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Setări de bază */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Container principal */
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Header și navigare - critical pentru prima afișare */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.nav__logo {
+  display: block;
+  height: calc(var(--header-height) - 20px);
+}
+
+.nav__logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ascunde meniul hamburger pe desktop */
+.nav__toggle {
+  display: none;
+}
+
+/* Stilizare de bază pentru meniu */
+.nav__menu {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.nav__link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.nav__link:hover, 
+.nav__link--active {
+  color: var(--color-primary);
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+}
+
+/* Ascunde text pentru screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Media queries pentru responsive design */
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  .nav__toggle-icon,
+  .nav__toggle-icon::before,
+  .nav__toggle-icon::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text);
+    position: absolute;
+    transition: all var(--transition-fast);
+  }
+  
+  .nav__toggle-icon {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .nav__toggle-icon::before {
+    top: -8px;
+  }
+  
+  .nav__toggle-icon::after {
+    bottom: -8px;
+  }
+  
+  .nav__toggle--active .nav__toggle-icon {
+    background-color: transparent;
+  }
+  
+  .nav__toggle--active .nav__toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  
+  .nav__toggle--active .nav__toggle-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+  
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all var(--transition-normal);
+    z-index: 100;
+  }
+  
+  .nav__menu--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,131 @@
+/* Social Sharing Component */
+.social-share {
+    display: flex;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.social-share-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.social-share-button:hover,
+.social-share-button:focus {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Facebook */
+.social-share-button--facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.social-share-button--facebook:hover,
+.social-share-button--facebook:focus {
+    background-color: #4c70ba;
+}
+
+/* Twitter */
+.social-share-button--twitter {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.social-share-button--twitter:hover,
+.social-share-button--twitter:focus {
+    background-color: #4db5f5;
+}
+
+/* WhatsApp */
+.social-share-button--whatsapp {
+    background-color: #25d366;
+    color: white;
+}
+
+.social-share-button--whatsapp:hover,
+.social-share-button--whatsapp:focus {
+    background-color: #4cd97b;
+}
+
+/* Email */
+.social-share-button--email {
+    background-color: #848484;
+    color: white;
+}
+
+.social-share-button--email:hover,
+.social-share-button--email:focus {
+    background-color: #a0a0a0;
+}
+
+/* Native Share */
+.social-share-native {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.social-share-native:hover,
+.social-share-native:focus {
+    background-color: var(--color-primary-hover);
+}
+
+/* Social share with text */
+.social-share--with-text .social-share-button {
+    width: auto;
+    border-radius: var(--radius-md);
+    padding: 0 1rem;
+    gap: 0.5rem;
+}
+
+.social-share--with-text .social-share-button i {
+    margin-right: 0.5rem;
+}
+
+/* Compact mode */
+.social-share--compact {
+    gap: 0.5rem;
+}
+
+.social-share--compact .social-share-button {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+}
+
+/* Large mode */
+.social-share--large {
+    gap: 1rem;
+}
+
+.social-share--large .social-share-button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+}
+
+/* Vertical mode */
+.social-share--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Media queries pentru responsivitate */
+@media (max-width: 768px) {
+    .social-share {
+        justify-content: center;
+    }
+}

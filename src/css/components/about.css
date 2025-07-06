@@ -1,0 +1,293 @@
+/**
+ * About Component
+ * Stiluri pentru pagina despre noi
+ */
+
+.about {
+  padding: var(--spacing-xl) 0;
+}
+
+.about__title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  position: relative;
+}
+
+.about__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xl);
+}
+
+.about__column {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about__column:nth-child(1) {
+  padding-right: var(--spacing-md);
+}
+
+.about__column:nth-child(2) {
+  padding-left: var(--spacing-md);
+  border-left: 1px solid var(--color-light-gray);
+}
+
+.about__text p {
+  margin-bottom: var(--spacing-md);
+}
+
+.about__image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Secțiunea de valori */
+.about__values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  height: 100%;
+}
+
+.about__value-card {
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 3px solid var(--color-primary);
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+  opacity: 0;
+}
+
+.about__value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Animații pentru secțiunea de valori */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about__value-card.animate {
+  opacity: 0;
+}
+
+.about__value-card.animate.visible {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+  opacity: 1;
+}
+
+.about__value-card:nth-child(1) {
+  --animation-order: 1;
+}
+
+.about__value-card:nth-child(2) {
+  --animation-order: 2;
+}
+
+.about__value-card:nth-child(3) {
+  --animation-order: 3;
+}
+
+.about__value-card:nth-child(4) {
+  --animation-order: 4;
+}
+
+.about__value-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about__value-card:hover .about__value-icon {
+  transform: scale(1.1);
+  color: var(--color-secondary);
+}
+
+.about__value-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.about__value-card p {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  margin-bottom: 0;
+}
+
+.value-card__text {
+  color: var(--color-gray);
+}
+
+/* Secțiunea de echipă */
+.team {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.team__title {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member__image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-md);
+  border: 3px solid var(--color-light-gray);
+}
+
+.team-member__name {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.team-member__position {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-member__bio {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .about__column + .about__column {
+    margin-top: var(--spacing-lg);
+  }
+  
+  .about__column:nth-child(2) {
+    border-left: none;
+    padding-left: 0;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-light-gray);
+  }
+  
+  .about__column:nth-child(1) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__values {
+    grid-template-columns: 1fr;
+  }
+  
+  .about__value-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .about__value-icon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .about__heading {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    position: relative;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+  }
+  
+  .about__heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+}
+
+@media (max-width: 480px) {
+  .about__title {
+    font-size: 1.8rem;
+  }
+  
+  .about__subtitle {
+    font-size: 1rem;
+  }
+  
+  .about__value-card h3 {
+    font-size: 1.1rem;
+  }
+}
